@@ -12,6 +12,18 @@ import (
 	"github.com/icrowley/fake"
 )
 
+/*
+|--------------------------------------------------------------------------
+| Function main()
+|--------------------------------------------------------------------------
+| @author 	: Thomas
+| @return 	: void
+| @init data			: populate data faker
+| @desc 				: iteration/count faker based on app.conf
+| for more information  : https://github.com/icrowley/fake
+|
+*/
+
 func InitData() {
 	var err error
 	orm.Debug = true

@@ -7,6 +7,17 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
+/*
+|--------------------------------------------------------------------------
+| Function main()
+|--------------------------------------------------------------------------
+| @author 	: Thomas
+| @return 	: void
+| @init credentials 	: set connection database and migration table
+| for more information  : https://beego.me/docs/mvc/controller/config.md
+|
+*/
+
 func Init_Credentials() {
 	orm.RegisterDriver(beego.AppConfig.String("ConnectionType"), orm.DRPostgres)
 	orm.RegisterDataBase("default",

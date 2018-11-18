@@ -13,6 +13,16 @@ import (
 	"github.com/astaxie/beego"
 )
 
+/*
+|--------------------------------------------------------------------------
+| Function init()
+|--------------------------------------------------------------------------
+| @author 	: Thomas
+| @return 	: void
+| @init 				: set Routing Beego Framework
+|
+*/
+
 func init() {
 	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/schedule",

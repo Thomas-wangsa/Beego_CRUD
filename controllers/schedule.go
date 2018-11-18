@@ -9,14 +9,14 @@ import (
 	"github.com/astaxie/beego"
 )
 
-// Operations about Users
+// Operations about Schedule
 type ScheduleController struct {
 	beego.Controller
 }
 
 // @Title GetAll
-// @Description get all Users
-// @Success 200 {object} models.User
+// @Description get all Schedule
+// @Success 200 {object} models.Schedule
 // @router / [get]
 func (sch *ScheduleController) GetAll() {
 	schedules := models.GetAllSchedule()
@@ -44,10 +44,10 @@ func (u *ScheduleController) Get() {
 	u.ServeJSON()
 }
 
-// @Title CreateUser
-// @Description create users
-// @Param	body		body 	models.User	true		"body for user content"
-// @Success 200 {int} models.User.Id
+// @Title CreateSchedule
+// @Description create Schedule
+// @Param	body		body 	models.Schedule	true		"body for user content"
+// @Success 200 {int} models.Schedule.Id
 // @Failure 403 body is empty
 // @router / [post]
 func (u *ScheduleController) Post() {
@@ -77,10 +77,10 @@ func (u *ScheduleController) Post() {
 }
 
 // @Title Update
-// @Description update the user
+// @Description update the Schedule
 // @Param	uid		path 	string	true		"The uid you want to update"
 // @Param	body		body 	models.User	true		"body for user content"
-// @Success 200 {object} models.User
+// @Success 200 {object} models.Schedule
 // @Failure 403 :uid is not int
 // @router /:uid [put]
 func (u *ScheduleController) Put() {
