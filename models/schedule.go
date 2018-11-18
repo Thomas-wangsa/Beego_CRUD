@@ -160,19 +160,23 @@ func DeleteSchedule(uid string) error {
 	exist := o.QueryTable("schedule").Filter("uuid", uid).Exist()
 
 	if exist {
-
-		num, err := o.Delete(&Schedule{Uuid: uid})
+		fmt.Println("DATA exist")
+		num, err := o.QueryTable("schedule").Filter("uuid", uid).Delete()
 
 		if err != nil {
+			fmt.Println("DATA failed")
 			return err
 		}
 
 		if num < 1 {
+			fmt.Println("DATA is not exist")
 			return errors.New("Delete Failed!")
 		} else {
+			fmt.Println("Delete success")
 			return nil
 		}
 	} else {
+		fmt.Println("DATA not exist")
 		return errors.New("Data not exist")
 	}
 }
